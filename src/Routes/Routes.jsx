@@ -7,6 +7,7 @@ import BrowseTask from "../Components/BrowseTask";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Components/Login";
 import Signup from "../Components/Signup";
+import Error from "../Components/Error";
 
 export const router = createBrowserRouter([
   {
@@ -44,5 +45,9 @@ export const router = createBrowserRouter([
         Component: Signup,
       },
     ],
+  },
+  {
+    path: "/*",
+    Component: Error,
   },
 ]);

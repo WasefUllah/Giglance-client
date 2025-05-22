@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Signup = () => {
+  const { signInWithGoogle, setUser } = useContext(AuthContext);
+  console.log(signInWithGoogle);
+  const handleGoogleBtn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="hero mt-28">
       <div className="card shadow-primary w-full max-w-sm shrink-0 shadow-2xl">
@@ -31,7 +44,10 @@ const Signup = () => {
               Signup
             </button>
           </form>
-          <button className="btn bg-white text-black border-[#e5e5e5]">
+          <button
+            onClick={handleGoogleBtn}
+            className="btn bg-white text-black border-[#e5e5e5]"
+          >
             <svg
               aria-label="Google logo"
               width="16"

@@ -1,28 +1,62 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router";
+import { NavLink, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
-  const { signInWithGoogle, setUser } = useContext(AuthContext);
+  const location = useLocation();
+  console.log(location.state);
+
+  const navigate = useNavigate();
+  const { signInWithGoogle, setUser, signInWithEmailPass } =
+    useContext(AuthContext);
   const handleGoogleBtn = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
         setUser(user);
+        navigate(`${location.state ? location.state : "/"}`);
+        alert("siiuu");
       })
       .catch((error) => {
         console.log(error);
+      });
+  };
+  // login btn
+  const handleLoginBtn = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const pass = form.pass.value;
+    signInWithEmailPass(email, pass)
+      .then((result) => {
+        const user = result.user;
+        form.reset();
+        setUser(user);
+        navigate(`${location.state ? location.state : "/"}`);
+      })
+      .catch((error) => {
+        alert(error);
       });
   };
   return (
     <div className="hero mt-28">
       <div className="card shadow-primary w-full max-w-sm shrink-0 shadow-2xl">
         <div className="card-body text-primary">
-          <form className="fieldset">
+          <form onSubmit={handleLoginBtn} className="fieldset">
             <label className="label text-neutral-950">Email</label>
-            <input type="email" className="input" placeholder="Email" />
+            <input
+              name="email"
+              type="email"
+              className="input"
+              placeholder="Email"
+            />
             <label className="label text-neutral-950">Password</label>
-            <input type="password" className="input" placeholder="Password" />
+            <input
+              name="pass"
+              type="password"
+              className="input"
+              placeholder="Password"
+            />
             <div>
               <p className="text-md">
                 Don't have an account, click here to{" "}
@@ -31,7 +65,10 @@ const Login = () => {
                 </NavLink>
               </p>
             </div>
-            <button className="btn btn-primary text-secondary mt-4">
+            <button
+              type="submit"
+              className="btn btn-primary text-secondary mt-4"
+            >
               Login
             </button>
           </form>

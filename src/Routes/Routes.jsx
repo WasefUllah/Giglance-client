@@ -8,6 +8,7 @@ import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Components/Login";
 import Signup from "../Components/Signup";
 import Error from "../Components/Error";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +21,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/mytask",
-        Component: MyTasks,
+        element: (
+          <PrivateRoute>
+            <MyTasks></MyTasks>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/addtask",
@@ -28,7 +33,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/browsetask",
-        Component: BrowseTask,
+        element: (
+          <PrivateRoute>
+            <BrowseTask></BrowseTask>
+          </PrivateRoute>
+        ),
       },
     ],
   },

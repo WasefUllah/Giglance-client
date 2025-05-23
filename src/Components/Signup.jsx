@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Signup = () => {
-  const { signInWithGoogle, setUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { signInWithGoogle, setUser, signUpWithEmailPass, updateUser } =
+    useContext(AuthContext);
   console.log(signInWithGoogle);
   const handleGoogleBtn = () => {
     signInWithGoogle()
@@ -15,23 +17,61 @@ const Signup = () => {
         console.log(error);
       });
   };
+  // sign up
+  const handleSignUpBtn = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const pass = form.pass.value;
+    const photo = form.photo.value;
+
+    signUpWithEmailPass(email, pass).then((result) => {
+      const user = result.user;
+      updateUser({ displayName: name, photoURL: photo })
+        .then(() => {
+          setUser({ ...user, displayName: name, photoURL: photo });
+          navigate("/");
+        })
+        .catch((error) => {
+          console.log(error);
+          setUser(user);
+        });
+    });
+  };
   return (
     <div className="hero mt-28">
       <div className="card shadow-primary w-full max-w-sm shrink-0 shadow-2xl">
         <div className="card-body text-primary">
-          <form className="fieldset">
+          <form onSubmit={handleSignUpBtn} className="fieldset">
             <label className="label text-neutral-950">Name</label>
-            <input type="text" className="input" placeholder="John Doe" />
+            <input
+              name="name"
+              type="text"
+              className="input"
+              placeholder="John Doe"
+            />
             <label className="label text-neutral-950">Email</label>
             <input
+              name="email"
               type="email"
               className="input"
               placeholder="johndoe@gmail.com"
             />
             <label className="label text-neutral-950">Password</label>
-            <input type="password" className="input" placeholder="Password" />
+            <input
+              name="pass"
+              type="password"
+              className="input"
+              placeholder="Password"
+            />
             <label className="label text-neutral-950">Photo URL</label>
-            <input type="text" className="input" placeholder="Photo URL" />
+            <input
+              name="photo"
+              type="text"
+              className="input"
+              placeholder="Photo URL"
+            />
             <div>
               <p className="text-md">
                 Already have an account, click here to{" "}
@@ -40,7 +80,10 @@ const Signup = () => {
                 </NavLink>
               </p>
             </div>
-            <button className="btn btn-primary text-secondary mt-4">
+            <button
+              type="submit"
+              className="btn btn-primary text-secondary mt-4"
+            >
               Signup
             </button>
           </form>

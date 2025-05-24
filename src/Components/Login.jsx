@@ -39,7 +39,7 @@ const Login = () => {
       });
   };
   return (
-    <div className="hero mt-28">
+    <div className="hero mt-20">
       <div className="card shadow-primary w-full max-w-sm shrink-0 shadow-2xl">
         <div className="card-body text-primary">
           <form onSubmit={handleLoginBtn} className="fieldset">
@@ -67,7 +67,7 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              className="btn btn-primary text-secondary mt-4"
+              className="btn btn-primary text-secondary mt-0"
             >
               Login
             </button>

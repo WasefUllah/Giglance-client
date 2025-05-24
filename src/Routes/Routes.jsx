@@ -9,6 +9,7 @@ import Login from "../Components/Login";
 import Signup from "../Components/Signup";
 import Error from "../Components/Error";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Loader from "../Components/Loader";
 
 export const router = createBrowserRouter([
   {
@@ -29,10 +30,16 @@ export const router = createBrowserRouter([
       },
       {
         path: "/addtask",
-        Component: AddTask,
+        element: (
+          <PrivateRoute>
+            <AddTask></AddTask>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/browsetask",
+        loader: () => fetch("http://localhost:3000/tasks"),
+        hydrateFallbackElement: <Loader></Loader>,
         element: (
           <PrivateRoute>
             <BrowseTask></BrowseTask>

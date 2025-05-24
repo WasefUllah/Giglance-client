@@ -3,7 +3,9 @@ import React from "react";
 const Loader = () => {
   return (
     <div>
-      <span className="loader loading-infinity loading-xl mx-auto"></span>
+      <div className="flex items-center justify-center">
+        <span className="loading loading-infinity h-screen loading-xl w-1/6"></span>
+      </div>
     </div>
   );
 };

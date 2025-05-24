@@ -21,8 +21,7 @@ const Navbar = () => {
               src={giglance}
               alt=""
             />
-          </NavLink>
-          <p>{user && user.email}</p>
+          </NavLink>  
         </div>
         <div>
           <ul className="flex justify-center text-white lg:gap-4 gap-1 md:gap-2 items-center">
@@ -49,24 +48,32 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex justify-center  items-center gap-2">
-          <NavLink to={"/auth/login"}>
-            <button className="lg:btn btn-xs btn-secondary text-primary">
-              Login
-            </button>
-          </NavLink>
-          <NavLink to={"/auth/signup"}>
-            <button className="lg:btn btn-xs btn-secondary text-primary">
-              Signup
-            </button>
-          </NavLink>
-          <NavLink>
-            <button
-              onClick={handleLouOutBtn}
-              className="lg:btn btn-xs btn-secondary text-primary"
-            >
-              Logout
-            </button>
-          </NavLink>
+          {!user ? (
+            <div className="flex justify-center items-center gap-2">
+              <NavLink to={"/auth/login"}>
+                <button className="lg:btn btn-xs btn-secondary text-primary">
+                  Login
+                </button>
+              </NavLink>
+              <NavLink to={"/auth/signup"}>
+                <button className="lg:btn btn-xs btn-secondary text-primary">
+                  Signup
+                </button>
+              </NavLink>
+            </div>
+          ) : (
+            <div className="flex justify-center items-center gap-4">
+              <img src={user.photoURL} alt="" className="md:w-16 w-13 rounded-full"/>
+              <NavLink>
+                <button
+                  onClick={handleLouOutBtn}
+                  className="lg:btn btn-xs btn-secondary text-primary"
+                >
+                  Logout
+                </button>
+              </NavLink>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Signup = () => {
+  const [errorText, setErrorText] = useState("");
   const navigate = useNavigate();
   const { signInWithGoogle, setUser, signUpWithEmailPass, updateUser } =
     useContext(AuthContext);
@@ -25,7 +26,14 @@ const Signup = () => {
     const email = form.email.value;
     const pass = form.pass.value;
     const photo = form.photo.value;
-
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+    if (!passwordRegex.test(pass)) {
+      setErrorText(
+        "Password must be at least 6 characters long and contain both uppercase and lowercase letters."
+      );
+      // console.log(errorText);
+      return;
+    }
     signUpWithEmailPass(email, pass).then((result) => {
       const user = result.user;
       updateUser({ displayName: name, photoURL: photo })
@@ -40,7 +48,7 @@ const Signup = () => {
     });
   };
   return (
-    <div className="hero mt-28">
+    <div className="hero mt-20">
       <div className="card shadow-primary w-full max-w-sm shrink-0 shadow-2xl">
         <div className="card-body text-primary">
           <form onSubmit={handleSignUpBtn} className="fieldset">
@@ -50,6 +58,7 @@ const Signup = () => {
               type="text"
               className="input"
               placeholder="John Doe"
+              required
             />
             <label className="label text-neutral-950">Email</label>
             <input
@@ -57,6 +66,7 @@ const Signup = () => {
               type="email"
               className="input"
               placeholder="johndoe@gmail.com"
+              required
             />
             <label className="label text-neutral-950">Password</label>
             <input
@@ -64,6 +74,7 @@ const Signup = () => {
               type="password"
               className="input"
               placeholder="Password"
+              required
             />
             <label className="label text-neutral-950">Photo URL</label>
             <input
@@ -71,6 +82,7 @@ const Signup = () => {
               type="text"
               className="input"
               placeholder="Photo URL"
+              required
             />
             <div>
               <p className="text-md">
@@ -79,10 +91,11 @@ const Signup = () => {
                   Login
                 </NavLink>
               </p>
+              {errorText ? <p className="text-xs text-red-500 h-8">{errorText}</p> : <p className="h-8"></p>}
             </div>
             <button
               type="submit"
-              className="btn btn-primary text-secondary mt-4"
+              className="btn btn-primary text-secondary mt-0"
             >
               Signup
             </button>

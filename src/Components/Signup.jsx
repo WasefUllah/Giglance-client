@@ -7,7 +7,6 @@ const Signup = () => {
   const navigate = useNavigate();
   const { signInWithGoogle, setUser, signUpWithEmailPass, updateUser } =
     useContext(AuthContext);
-  console.log(signInWithGoogle);
   const handleGoogleBtn = () => {
     signInWithGoogle()
       .then((result) => {
@@ -36,7 +35,8 @@ const Signup = () => {
     }
     signUpWithEmailPass(email, pass).then((result) => {
       const user = result.user;
-      updateUser({ displayName: name, photoURL: photo })
+      const updatedUser = { displayName: name, photoURL: photo };
+      updateUser(updatedUser)
         .then(() => {
           setUser({ ...user, displayName: name, photoURL: photo });
           navigate("/");
@@ -91,7 +91,11 @@ const Signup = () => {
                   Login
                 </NavLink>
               </p>
-              {errorText ? <p className="text-xs text-red-500 h-8">{errorText}</p> : <p className="h-8"></p>}
+              {errorText ? (
+                <p className="text-xs text-red-500 h-8">{errorText}</p>
+              ) : (
+                <p className="h-8"></p>
+              )}
             </div>
             <button
               type="submit"

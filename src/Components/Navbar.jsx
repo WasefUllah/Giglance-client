@@ -11,6 +11,8 @@ const Navbar = () => {
         console.log(error);
       });
   };
+  console.log(user?.photoURL);
+
   return (
     <div className=" bg-primary">
       <div className="flex justify-between items-center w-11/12 mx-auto py-5">
@@ -21,7 +23,7 @@ const Navbar = () => {
               src={giglance}
               alt=""
             />
-          </NavLink>  
+          </NavLink>
         </div>
         <div>
           <ul className="flex justify-center text-white lg:gap-4 gap-1 md:gap-2 items-center">
@@ -35,7 +37,7 @@ const Navbar = () => {
                 Add task
               </li>
             </NavLink>
-            <NavLink to={"/browsetask"}>
+            <NavLink to={"/tasks"}>
               <li className="lg:px-2 px-1  lg:py-1 rounded-2xl text-xs lg:text-lg">
                 Browse task
               </li>
@@ -63,7 +65,11 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="flex justify-center items-center gap-4">
-              <img src={user.photoURL} alt="" className="md:w-16 w-13 rounded-full"/>
+              <img
+                src={user?.photoURL}
+                alt=""
+                className="md:w-16 w-13 rounded-full"
+              />
               <NavLink>
                 <button
                   onClick={handleLouOutBtn}

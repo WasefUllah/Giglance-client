@@ -1,67 +1,18 @@
-import React, { useState } from "react";
-import { useLoaderData, useNavigate } from "react-router";
+import React, { useEffect, useState } from "react";
+import { Link, useLoaderData, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const BrowseTask = () => {
-  // const {setTasks} = useContext(AuthContext);
-  // const tasks = useLoaderData();
   const loadedTasks = useLoaderData();
   const [tasks, setTasks] = useState(loadedTasks);
+
   const navigate = useNavigate();
+  useEffect(()=>{
+    setTasks(loadedTasks);
 
-  const handleDelete = (id, name) => {
-    Swal.fire({
-      title: `Are you sure to delete, ${name}`,
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        console.log(id);
+  },[])
 
-        fetch(`http://localhost:3000/tasks/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-
-            if (data.deletedCount) {
-              Swal.fire({
-                title: "Deleted!",
-                text: `${name} has been deleted.`,
-                icon: "success",
-              });
-
-              //   delete the task
-
-              const remainingTasks = tasks.filter((task) => task._id !== id);
-              setTasks(remainingTasks);
-            }
-          });
-        Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
-          icon: "success",
-        });
-      }
-    });
-    // const confirm = window.confirm("Are you sure you want to delete this task?");
-    // if (confirm) {
-    //   fetch(`http://localhost:3000/tasks/${id}`, {
-    //     method: "DELETE",
-    //   })
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //       console.log("Deleted:", data);
-    //       // Optional: refresh or remove from UI manually
-    //     });
-    // }
-  };
 
   return (
     <div className="overflow-x-auto px-4 py-6">
@@ -90,18 +41,15 @@ const BrowseTask = () => {
                 {task.name} ({task.email})
               </td>
               <td className="flex flex-col lg:flex-row gap-2 justify-center">
+                <Link to={`/tasks/${task._id}`}>
                 <button
                   className="btn btn-sm btn-info"
-                  onClick={() => navigate(`/task/${task._id}`)}
+                  // onClick={() => navigate(`/tasks/${task._id}`)}
                 >
                   See Details
                 </button>
-                <button
-                  className="btn btn-sm btn-error"
-                  onClick={() => handleDelete(task._id, task.title)}
-                >
-                  Delete
-                </button>
+                </Link>
+                
               </td>
             </tr>
           ))}

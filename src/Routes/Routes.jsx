@@ -10,6 +10,7 @@ import Signup from "../Components/Signup";
 import Error from "../Components/Error";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Loader from "../Components/Loader";
+import TaskDetails from "../Components/TaskDetails";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/mytask",
+        loader: () => fetch("http://localhost:3000/tasks"),
+        hydrateFallbackElement: <Loader></Loader>,
         element: (
           <PrivateRoute>
             <MyTasks></MyTasks>
@@ -37,12 +40,22 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/browsetask",
+        path: "/tasks",
         loader: () => fetch("http://localhost:3000/tasks"),
         hydrateFallbackElement: <Loader></Loader>,
         element: (
           <PrivateRoute>
             <BrowseTask></BrowseTask>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/tasks/:id",
+        loader: ({params}) => fetch(`http://localhost:3000/tasks/${params.id}`),
+        hydrateFallbackElement: <Loader></Loader>,
+        element: (
+          <PrivateRoute>
+            <TaskDetails></TaskDetails>
           </PrivateRoute>
         ),
       },

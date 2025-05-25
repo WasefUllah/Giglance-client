@@ -34,11 +34,12 @@ const AuthProvider = ({ children }) => {
   };
   // update profile
   const updateUser = (updatedUser) => {
-    return updateProfile(auth.user, { updatedUser });
+    return updateProfile(auth.currentUser, updatedUser);
   };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log(currentUser);
       setUser(currentUser);
       setLoading(false);
     });

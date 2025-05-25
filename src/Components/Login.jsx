@@ -15,7 +15,6 @@ const Login = () => {
         const user = result.user;
         setUser(user);
         navigate(`${location.state ? location.state : "/"}`);
-        alert("siiuu");
       })
       .catch((error) => {
         console.log(error);

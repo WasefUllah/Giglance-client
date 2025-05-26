@@ -11,6 +11,7 @@ import Error from "../Components/Error";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Loader from "../Components/Loader";
 import TaskDetails from "../Components/TaskDetails";
+import UpdateTask from "../Components/UpdateTask";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,17 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "/updatetask/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/tasks/${params.id}`),
+        hydrateFallbackElement: <Loader></Loader>,
+        element: (
+          <PrivateRoute>
+            <UpdateTask></UpdateTask>
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/tasks",
         loader: () => fetch("http://localhost:3000/tasks"),
         hydrateFallbackElement: <Loader></Loader>,
@@ -59,7 +71,6 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <TaskDetails></TaskDetails>
-            //{" "}
           </PrivateRoute>
         ),
       },

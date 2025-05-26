@@ -1,18 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { useLoaderData, useNavigate } from "react-router";
+import { useLoaderData, useLocation, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
 const MyTasks = () => {
   const { user } = useContext(AuthContext);
   const [tasks, setTasks] = useState([]);
   const loadedTasks = useLoaderData();
+  const location = useLocation();
 
   const myTasks = loadedTasks.filter((task) => task.email === user.email);
   useEffect(() => {
     setTasks(myTasks);
   }, []);
-
 
   const navigate = useNavigate();
   const handleDelete = (id, name) => {
@@ -53,9 +53,7 @@ const MyTasks = () => {
   };
   return (
     <div className="overflow-x-auto px-4 py-6">
-      <h2 className="text-2xl font-bold mb-4 text-center">
-        My tasks
-      </h2>
+      <h2 className="text-2xl font-bold mb-4 text-center">My tasks</h2>
       <table className="table table-zebra w-full text-sm lg:text-base">
         <thead className="bg-primary text-white">
           <tr>
@@ -82,7 +80,11 @@ const MyTasks = () => {
               <td className="flex flex-col lg:flex-row gap-2 justify-center">
                 <button
                   className="btn btn-sm btn-info"
-                  onClick={() => {navigate(`/tasks/${task._id}`)}}
+                  onClick={() => {
+                    navigate(`/tasks/${task._id}`, {
+                      state: { from: location.pathname },
+                    });
+                  }}
                 >
                   Update
                 </button>

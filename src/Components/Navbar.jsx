@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import giglance from "../assets/Giglance.png";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Tooltip } from "react-tooltip";
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
   const handleLouOutBtn = () => {
@@ -14,6 +15,7 @@ const Navbar = () => {
 
   return (
     <div className=" bg-primary">
+      <Tooltip id="my-tooltip" />
       <div className="flex justify-between items-center w-11/12 mx-auto py-5">
         <div>
           <NavLink to={"/"}>
@@ -64,11 +66,18 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="flex justify-center items-center gap-4">
-              <img
-                src={user?.photoURL}
-                alt=""
-                className="md:w-16 w-13 rounded-full"
-              />
+              <a
+                data-tooltip-id="my-tooltip"
+                data-tooltip-content={user.displayName}
+                data-tooltip-place="top"
+              >
+                <img
+                  src={user?.photoURL}
+                  alt=""
+                  className="md:w-16 w-13 rounded-full"
+                />
+              </a>
+              <Tooltip id="my-tooltip" />
               <NavLink>
                 <button
                   onClick={handleLouOutBtn}

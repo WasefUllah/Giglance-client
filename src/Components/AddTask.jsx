@@ -8,8 +8,7 @@ const AddTask = () => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    const taskData = Object.fromEntries(formData.entries());
-    console.log(taskData);
+    const taskData = Object.fromEntries(formData.entries());    
 
     // send data to server
     

@@ -11,7 +11,6 @@ const Navbar = () => {
         console.log(error);
       });
   };
-  console.log(user?.photoURL);
 
   return (
     <div className=" bg-primary">

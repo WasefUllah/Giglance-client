@@ -19,6 +19,8 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
+        loader: () => fetch("http://localhost:3000/sortedTasks"),
+        hydrateFallbackElement: <Loader></Loader>,
         Component: Home,
       },
       {
@@ -51,11 +53,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "/tasks/:id",
-        loader: ({params}) => fetch(`http://localhost:3000/tasks/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/tasks/${params.id}`),
         hydrateFallbackElement: <Loader></Loader>,
         element: (
           <PrivateRoute>
             <TaskDetails></TaskDetails>
+            //{" "}
           </PrivateRoute>
         ),
       },

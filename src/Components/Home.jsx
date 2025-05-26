@@ -1,9 +1,22 @@
-import React from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 import TaskCard from "./TaskCard";
+import Success from "./Success";
+import Faq from "./Faq";
 
 const Home = () => {
+  const [data, setData] = useState([]);
+  const [faq, setFaq] = useState([]);
   const tasks = useLoaderData();
+  useEffect(() => {
+    fetch("success.json")
+      .then((res) => res.json())
+      .then((data) => setData(data));
+
+    fetch("faq.json")
+      .then((res) => res.json())
+      .then((data) => setFaq(data));
+  }, []);
 
   return (
     <div>
@@ -90,10 +103,29 @@ const Home = () => {
         </div>
       </div>
 
+        <h1 className="font-bold text-2xl py-2 text-primary">Deadline Calls</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-2 lg:gap-4">
-        {tasks.map((task) => (
+        {tasks?.map((task) => (
           <TaskCard key={task._id} task={task}></TaskCard>
         ))}
+      </div>
+
+      {/* <div className="flex justify-between items-center">
+        {data.map((data, index) => (
+          <Success key={index} data={data}></Success>
+        ))}
+      </div> */}
+
+      
+       <div>
+        <h1 className="font-bold text-2xl pt-3 text-primary">Our Services</h1>
+         <Success data={data}></Success>
+       </div>
+     
+
+      <div className="my-5">
+        <h1 className="font-bold text-2xl pt-3 text-primary">FAQs</h1>
+        <Faq faq={faq}></Faq>
       </div>
     </div>
   );

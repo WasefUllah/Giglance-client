@@ -8,7 +8,9 @@ const TaskDetails = () => {
 
   console.log(task);
 
-  return <div>hi</div>;
+  return <div>
+    
+  </div>;
 };
 
 export default TaskDetails;

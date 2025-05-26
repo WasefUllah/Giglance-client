@@ -1,0 +1,34 @@
+[
+  {
+    "question": "What is this platform about?",
+    "answer": "This is an online freelancing platform where clients can post tasks and freelancers can bid or apply to complete them."
+  },
+  {
+    "question": "How do I create an account?",
+    "answer": "Click on the 'Sign Up' button at the top right corner, choose whether you're a freelancer or a client, and fill in the required details."
+  },
+  {
+    "question": "How can I post a task?",
+    "answer": "After logging in as a client, go to your dashboard and click 'Post a Task'. Fill in the title, description, deadline, category, and budget."
+  },
+  {
+    "question": "How do freelancers apply for a task?",
+    "answer": "Freelancers can browse available tasks and click 'Apply' or 'Submit Proposal' on any task that matches their skills."
+  },
+  {
+    "question": "Is there any fee to use the platform?",
+    "answer": "Creating an account and browsing tasks is free. The platform may charge a small service fee once a task is completed and payment is made."
+  },
+  {
+    "question": "How are payments handled?",
+    "answer": "Payments are handled securely through the platform. Clients pay after the task is completed, and freelancers receive the payment in their wallet or linked account."
+  },
+  {
+    "question": "What happens if there's a dispute?",
+    "answer": "If a dispute arises, both parties can submit their side of the issue and our support team will review and resolve it fairly."
+  },
+  {
+    "question": "Can I delete my account?",
+    "answer": "Yes, you can delete your account anytime from your profile settings. Note that this action is irreversible."
+  }
+]

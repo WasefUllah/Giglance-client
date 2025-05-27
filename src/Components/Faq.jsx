@@ -2,7 +2,7 @@ import React from 'react';
 
 const Faq = ({faq}) => {
     return (
-        <div>
+        <div className='dark:text-secondary'>
             {
                 faq.map((f,index)=><div
               key={index}

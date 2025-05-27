@@ -8,14 +8,14 @@ const TaskCard = ({ task }) => {
      
     
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 mb-4 border hover:shadow-xl ">
-      <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
+    <div className="bg-white shadow-lg rounded-lg p-6 mb-4 border hover:shadow-xl dark:bg-gray-600 dark:text-secondary">
+      <h3 className="text-xl font-semibold text-gray-800 dark:text-accent mb-2">{title}</h3>
       
-      <p className="text-sm text-gray-600 mb-1"><span className="font-medium">Deadline:</span> {deadline}</p>
-      <p className="text-sm text-gray-600 mb-1"><span className="font-medium">Budget:</span> ${budget}</p>
-      <p className="text-sm text-gray-600 mb-1"><span className="font-medium">Posted by:</span> {name} ({email})</p>
+      <p className="text-sm text-gray-600 dark:text-secondary mb-1"><span className="font-medium">Deadline:</span> {deadline}</p>
+      <p className="text-sm text-gray-600 dark:text-secondary mb-1"><span className="font-medium">Budget:</span> ${budget}</p>
+      <p className="text-sm text-gray-600 dark:text-secondary mb-1"><span className="font-medium">Posted by:</span> {name} ({email})</p>
       
-      <p className="text-gray-700 mt-2 mb-4 line-clamp-3">{description}</p>
+      <p className="text-gray-700 dark:text-secondary mt-2 mb-4 line-clamp-3">{description}</p>
       
       <div className="text-right">
         <Link

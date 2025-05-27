@@ -11,8 +11,8 @@ const Login = () => {
   const handleGoogleBtn = () => {
     signInWithGoogle()
       .then((result) => {
-        // const user = result.user;
-        // setUser(user);
+        const user = result.user;
+        setUser(user);
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {

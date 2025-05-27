@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import giglance from "../assets/Giglance.png";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Tooltip } from "react-tooltip";
+import { IoSunny } from "react-icons/io5";
+import { FaMoon } from "react-icons/fa";
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
   const handleLouOutBtn = () => {
@@ -12,12 +14,32 @@ const Navbar = () => {
         console.log(error);
       });
   };
-console.log(user?.photoURL);
+  const [theme, setTheme] = useState("");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("savedTheme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      localStorage.setItem("savedTheme", "light");
+      setTheme("light");
+    }
+
+    theme === "light"
+      ? document.documentElement.setAttribute("data-theme", "light")
+      : document.documentElement.setAttribute("data-theme", "dark");
+  }, [theme]);
+
+  const handleThemeChange = () => {
+    const newSavedTheme = theme === "light" ? "dark" : "light";
+    localStorage.setItem("savedTheme", newSavedTheme);
+    setTheme(newSavedTheme);
+  };
 
   return (
-    <div className=" bg-primary">
+    <div className=" bg-primary dark:bg-gray-800">
       <Tooltip id="my-tooltip" />
-      <div className="flex justify-between items-center w-11/12 mx-auto py-5">
+      <div className="flex justify-between items-center gap-1 md:w-11/12 mx-auto py-5">
         <div>
           <NavLink to={"/"}>
             <img
@@ -28,7 +50,7 @@ console.log(user?.photoURL);
           </NavLink>
         </div>
         <div>
-          <ul className="flex justify-center text-white lg:gap-4 gap-1 md:gap-2 items-center">
+          <ul className="flex justify-center text-white gap-1 lg:gap-4  md:gap-2 items-center">
             <NavLink to={"/"}>
               <li className="lg:px-2 px-1  lg:py-1 rounded-2xl text-xs lg:text-lg">
                 Home
@@ -52,10 +74,22 @@ console.log(user?.photoURL);
           </ul>
         </div>
         <div className="flex justify-center  items-center gap-2">
+          {theme === "light" ? (
+            <IoSunny
+              className="w-[15px] h-auto md:w-[20px] text-amber-500 mr-2 md:mr-4"
+              onClick={handleThemeChange}
+            />
+          ) : (
+            <FaMoon
+              className="w-[15px] h-auto md:w-[20px] rotate-y-180 text-white mr-2 md:mr-4"
+              onClick={handleThemeChange}
+            />
+          )}
+
           {!user ? (
             <div className="flex justify-center items-center gap-2">
               <NavLink to={"/auth/login"}>
-                <button className="lg:btn btn-xs btn-secondary text-primary">
+                <button className="lg:btn btn-xs text-xs md:text-me lg:text-lg btn-secondary text-primary">
                   Login
                 </button>
               </NavLink>
@@ -82,7 +116,7 @@ console.log(user?.photoURL);
               <NavLink>
                 <button
                   onClick={handleLouOutBtn}
-                  className="lg:btn btn-xs btn-secondary text-primary"
+                  className="lg:btn btn-xs btn-secondary text-xs sm:px-1 lg:text-lg   text-primary"
                 >
                   Logout
                 </button>

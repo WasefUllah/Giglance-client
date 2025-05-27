@@ -19,9 +19,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       <div className="carousel w-full h-[450px]">
-        Slide 1 - Web Development
         <div id="slide1" className="carousel-item relative w-full">
           <div className="w-full flex justify-center items-center">
             <div className="bg-blue-600 text-white rounded-2xl p-10 w-11/12 md:w-3/4 shadow-lg text-center">
@@ -110,11 +109,7 @@ const Home = () => {
         ))}
       </div>
 
-      {/* <div className="flex justify-between items-center">
-        {data.map((data, index) => (
-          <Success key={index} data={data}></Success>
-        ))}
-      </div> */}
+      
 
       
        <div>

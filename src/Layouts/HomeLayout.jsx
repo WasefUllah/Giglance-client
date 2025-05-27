@@ -7,8 +7,10 @@ const HomeLayout = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='w-11/12 mx-auto'>
+            <div className='dark:bg-gray-700'>
+                <div className='w-full md:w-11/12 md:mx-auto '>
                 <Outlet></Outlet>
+            </div>
             </div>
             <Footer></Footer>
         </div>

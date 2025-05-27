@@ -23,7 +23,7 @@ const AddTask = () => {
       .then((data) => {
         if (data.insertedId) {
           Swal.fire({
-            title: "Coffee added successfully",
+            title: "Task added successfully",
             icon: "success",
             draggable: true,
           });

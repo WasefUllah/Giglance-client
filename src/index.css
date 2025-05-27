@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
-
+@plugin "daisyui";
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @plugin "daisyui/theme" {
   name: "dark";
-  --color-primary: #90c963;
+  --color-primary: #261fb3;
   --color-secondary: #1e3a8a;
   --color-base-200: #1f2937;
   --color-base-300: #374151;
@@ -31,9 +31,6 @@ a.active {
   @apply rounded-2xl;
 }
 [data-theme="dark"] .active {
-  border-bottom: 2px solid #2090d3;
-  color: white;
-  box-shadow: 2px 2px 2px #2090d3;
-  font-weight: bold;
-  background-color: #96c362;
+  color: black;
+  background-color: #fbe4d6;
 }

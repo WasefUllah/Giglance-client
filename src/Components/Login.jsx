@@ -41,14 +41,14 @@ const Login = () => {
       <div className="card shadow-primary w-full max-w-sm shrink-0 shadow-2xl dark:shadow-none dark:border-2 dark:border-white dark:text-secondary">
         <div className="card-body text-primary">
           <form onSubmit={handleLoginBtn} className="fieldset">
-            <label className="label text-neutral-950  dark:text-secondary">Email</label>
+            <label className="label text-neutral-950  dark:text-white">Email</label>
             <input
               name="email"
               type="email"
               className="input dark:bg-gray-500 dark:text-white"
               placeholder="Email"
             />
-            <label className="label text-neutral-950 dark:text-secondary">Password</label>
+            <label className="label text-neutral-950 dark:text-white">Password</label>
             <input
               name="pass"
               type="password"
@@ -56,7 +56,7 @@ const Login = () => {
               placeholder="Password"
             />
             <div>
-              <p className="text-md dark:text-secondary">
+              <p className="text-md dark:text-white">
                 Don't have an account, click here to{" "}
                 <NavLink to={"/auth/signup"} className="link link-hover">
                   Signup
@@ -65,7 +65,7 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              className="btn btn-primary text-secondary mt-0"
+              className="btn btn-primary  dark:text-white text-secondary mt-0"
             >
               Login
             </button>

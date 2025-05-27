@@ -37,12 +37,12 @@ const AddTask = () => {
         onSubmit={handleSubmitBtn}
         className="max-w-2xl mx-auto dark:bg-gray-800 p-6 bg-white shadow-lg shadow-primary dark:shadow-gray-500  rounded-lg space-y-4 text-base-accent"
       >
-        <h2 className="text-2xl font-bold text-center text-primary">
+        <h2 className="text-2xl font-bold text-center text-primary dark:text-white">
           Post a Task
         </h2>
 
         <div>
-          <label className="label dark:text-secondary">
+          <label className="label dark:text-white">
             <span className="label-text font-medium">Task Title</span>
           </label>
           <input
@@ -55,7 +55,7 @@ const AddTask = () => {
         </div>
 
         <div>
-          <label className="label dark:text-secondary">
+          <label className="label dark:text-white">
             <span className="label-text font-medium">Category</span>
           </label>
           <select
@@ -74,7 +74,7 @@ const AddTask = () => {
         </div>
 
         <div>
-          <label className="label dark:text-secondary">
+          <label className="label dark:text-white">
             <span className="label-text font-medium">Description</span>
           </label>
           <textarea
@@ -87,7 +87,7 @@ const AddTask = () => {
         </div>
 
         <div>
-          <label className="label dark:text-secondary">
+          <label className="label dark:text-white">
             <span className="label-text font-medium">Deadline</span>
           </label>
           <input
@@ -99,7 +99,7 @@ const AddTask = () => {
         </div>
 
         <div>
-          <label className="label dark:text-secondary">
+          <label className="label dark:text-white">
             <span className="label-text font-medium">Budget</span>
           </label>
           <input
@@ -113,7 +113,7 @@ const AddTask = () => {
         </div>
 
         <div>
-          <label className="label dark:text-secondary">
+          <label className="label dark:text-white">
             <span className="label-text font-medium">Your Email</span>
           </label>
           <input
@@ -126,7 +126,7 @@ const AddTask = () => {
         </div>
 
         <div>
-          <label className="label dark:text-secondary">
+          <label className="label dark:text-white">
             <span className="label-text font-medium">Your Name</span>
           </label>
           <input

@@ -102,7 +102,7 @@ const Home = () => {
         </div>
       </div>
 
-        <h1 className="font-bold text-2xl py-2 text-primary dark:text-secondary">Deadline Calls</h1>
+        <h1 className="font-bold text-2xl py-2 text-primary dark:text-white">Deadline Calls</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-2 lg:gap-4">
         {tasks?.map((task) => (
           <TaskCard key={task._id} task={task}></TaskCard>
@@ -113,13 +113,13 @@ const Home = () => {
 
       
        <div>
-        <h1 className="font-bold text-2xl pt-3 text-primary dark:text-secondary">Our Services</h1>
+        <h1 className="font-bold text-2xl pt-3 text-primary dark:text-white">Our Services</h1>
          <Success data={data}></Success>
        </div>
      
 
       <div className="my-5">
-        <h1 className="font-bold text-2xl pt-3 text-primary dark:text-secondary">FAQs</h1>
+        <h1 className="font-bold text-2xl pt-3 text-primary dark:text-white">FAQs</h1>
         <Faq faq={faq}></Faq>
       </div>
     </div>

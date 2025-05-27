@@ -53,7 +53,7 @@ const Signup = () => {
       <div className="card shadow-primary w-full max-w-sm shrink-0 shadow-2xl dark:shadow-none ">
         <div className="card-body text-primary">
           <form onSubmit={handleSignUpBtn} className="fieldset">
-            <label className="label text-neutral-950 dark:text-secondary">
+            <label className="label text-neutral-950 dark:text-white">
               Name
             </label>
             <input
@@ -63,7 +63,7 @@ const Signup = () => {
               placeholder="John Doe"
               required
             />
-            <label className="label text-neutral-950 dark:text-secondary">
+            <label className="label text-neutral-950 dark:text-white">
               Email
             </label>
             <input
@@ -73,7 +73,7 @@ const Signup = () => {
               placeholder="johndoe@gmail.com"
               required
             />
-            <label className="label text-neutral-950 dark:text-secondary">
+            <label className="label text-neutral-950 dark:text-white">
               Password
             </label>
             <input
@@ -83,7 +83,7 @@ const Signup = () => {
               placeholder="Password"
               required
             />
-            <label className="label text-neutral-950 dark:text-secondary">
+            <label className="label text-neutral-950 dark:text-white">
               Photo URL
             </label>
             <input
@@ -94,7 +94,7 @@ const Signup = () => {
               required
             />
             <div>
-              <p className="text-md dark:text-secondary">
+              <p className="text-md dark:text-white">
                 Already have an account, click here to{" "}
                 <NavLink to={"/auth/login"} className="link link-hover">
                   Login
@@ -108,7 +108,7 @@ const Signup = () => {
             </div>
             <button
               type="submit"
-              className="btn btn-primary text-secondary mt-0 "
+              className="btn btn-primary dark:text-white text-secondary mt-0 "
             >
               Signup
             </button>

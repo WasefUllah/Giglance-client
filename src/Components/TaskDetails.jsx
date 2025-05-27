@@ -83,7 +83,7 @@ const TaskDetails = () => {
               onSubmit={handleUpdateBtn}
               className="max-w-3xl mx-auto p-6 bg-white shadow-lg shadow-primary  rounded-lg space-y-4 text-base-accent  dark:bg-gray-700"
             >
-              <h2 className="text-2xl font-bold text-center text-primary dark:text-secondary">
+              <h2 className="text-2xl font-bold text-center text-primary dark:text-white">
                 Update the task
               </h2>
 
@@ -191,10 +191,10 @@ const TaskDetails = () => {
             </form>
           ) : (
             <>
-              <p className="text-right dark:text-secondary">
+              <p className="text-right dark:text-white">
                 This task has {bidCount} bids.
               </p>
-              <h2 className="text-2xl font-bold dark:text-secondary">
+              <h2 className="text-2xl font-bold dark:text-white">
                 {task.title}
               </h2>
               <p className="text-gray-700 dark:text-white">
@@ -214,7 +214,7 @@ const TaskDetails = () => {
 
               <button
                 onClick={handleBid}
-                className="btn  btn-sm flex items-center dark:bg-secondary"
+                className="btn   btn-sm flex items-center dark:bg-secondary"
               >
                 <FaGavel className="mr-2" /> Place a Bid
               </button>

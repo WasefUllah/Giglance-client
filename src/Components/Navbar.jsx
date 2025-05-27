@@ -88,16 +88,16 @@ const Navbar = () => {
 
           {!user ? (
             <div className="flex justify-center items-center gap-2">
-              <NavLink to={"/auth/login"}>
-                <button className="lg:btn btn-xs btn-secondary text-xs sm:px-1 lg:text-lg   text-primary" >
+              <Link to={"/auth/login"}>
+                <button className="btn btn-xs md:btn-lg  btn-secondary text-xs sm:px-1 lg:text-lg  dark:text-white text-primary">
                   Login
                 </button>
-              </NavLink>
-              <NavLink to={"/auth/signup"}>
-                <button className="lg:btn btn-xs btn-secondary text-xs sm:px-1 lg:text-lg   text-primary">
+              </Link>
+              <Link to={"/auth/signup"}>
+                <button className="btn btn-xs md:btn-lg  btn-secondary text-xs sm:px-1 lg:text-lg  dark:text-white text-primary">
                   Signup
                 </button>
-              </NavLink>
+              </Link>
             </div>
           ) : (
             <div className="flex justify-center items-center gap-4">
@@ -113,14 +113,14 @@ const Navbar = () => {
                 />
               </a>
               <Tooltip id="my-tooltip" />
-              <NavLink>
+              <Link>
                 <button
                   onClick={handleLouOutBtn}
-                  className="lg:btn btn-xs btn-secondary text-xs sm:px-1 lg:text-lg   text-primary"
+                  className="btn btn-xs md:btn-lg  btn-secondary text-xs sm:px-1 lg:text-lg  dark:text-white text-primary"
                 >
                   Logout
                 </button>
-              </NavLink>
+              </Link>
             </div>
           )}
         </div>

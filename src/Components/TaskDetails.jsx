@@ -16,7 +16,7 @@ const TaskDetails = () => {
   const handleBid = () => {
     if (!task.bids.includes(user.email)) {
       task.bids.push(user.email);
-      fetch(`http://localhost:3000/tasks/${task._id}`, {
+      fetch(`https://giglance-server.vercel.app/tasks/${task._id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
@@ -26,7 +26,7 @@ const TaskDetails = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.modifiedCount) {
-            fetch(`http://localhost:3000/tasks/${task._id}`)
+            fetch(`https://giglance-server.vercel.app/tasks/${task._id}`)
               .then((res) => res.json())
               .then((data) => console.log(data));
             setBidCount(bidCount + 1);
@@ -54,7 +54,7 @@ const TaskDetails = () => {
     const form = e.target;
     const formData = new FormData(form);
     const taskData = Object.fromEntries(formData.entries());
-    fetch(`http://localhost:3000/tasks/${task._id}`, {
+    fetch(`https://giglance-server.vercel.app/tasks/${task._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

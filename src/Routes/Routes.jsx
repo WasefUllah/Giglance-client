@@ -20,13 +20,13 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch("http://localhost:3000/sortedTasks"),
+        loader: () => fetch("https://giglance-server.vercel.app/sortedTasks"),
         hydrateFallbackElement: <Loader></Loader>,
         Component: Home,
       },
       {
         path: "/mytask",
-        loader: () => fetch("http://localhost:3000/tasks"),
+        loader: () => fetch("https://giglance-server.vercel.app/tasks"),
         hydrateFallbackElement: <Loader></Loader>,
         element: (
           <PrivateRoute>
@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
       {
         path: "/updatetask/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/tasks/${params.id}`),
+          fetch(`https://giglance-server.vercel.app/tasks/${params.id}`),
         hydrateFallbackElement: <Loader></Loader>,
         element: (
           <PrivateRoute>
@@ -55,7 +55,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/tasks",
-        loader: () => fetch("http://localhost:3000/tasks"),
+        loader: () => fetch("https://giglance-server.vercel.app/tasks"),
         hydrateFallbackElement: <Loader></Loader>,
         element: (
           <PrivateRoute>
@@ -66,7 +66,7 @@ export const router = createBrowserRouter([
       {
         path: "/tasks/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/tasks/${params.id}`),
+          fetch(`https://giglance-server.vercel.app/tasks/${params.id}`),
         hydrateFallbackElement: <Loader></Loader>,
         element: (
           <PrivateRoute>

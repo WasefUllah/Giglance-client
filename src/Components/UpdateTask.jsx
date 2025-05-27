@@ -9,7 +9,7 @@ const UpdateTask = () => {
     const form = e.target;
     const formData = new FormData(form);
     const taskData = Object.fromEntries(formData.entries());
-    fetch(`http://localhost:3000/tasks/${user._id}`, {
+    fetch(`https://giglance-server.vercel.app/tasks/${user._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -29,7 +29,6 @@ const UpdateTask = () => {
       });
   };
 
- 
   return (
     <div>
       <form

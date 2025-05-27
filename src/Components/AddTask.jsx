@@ -12,7 +12,7 @@ const AddTask = () => {
     taskData.bids = [];
     // send data to server
 
-    fetch("http://localhost:3000/tasks", {
+    fetch("https://giglance-server.vercel.app/tasks", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -32,35 +32,35 @@ const AddTask = () => {
       });
   };
   return (
-    <div>
+    <div className="dark:bg-gray-800 py-5">
       <form
         onSubmit={handleSubmitBtn}
-        className="max-w-2xl mx-auto p-6 bg-white shadow-lg shadow-primary my-5 rounded-lg space-y-4 text-base-accent"
+        className="max-w-2xl mx-auto dark:bg-gray-800 p-6 bg-white shadow-lg shadow-primary dark:shadow-gray-500  rounded-lg space-y-4 text-base-accent"
       >
         <h2 className="text-2xl font-bold text-center text-primary">
           Post a Task
         </h2>
 
         <div>
-          <label className="label">
+          <label className="label dark:text-secondary">
             <span className="label-text font-medium">Task Title</span>
           </label>
           <input
             name="title"
             type="text"
             placeholder="Enter task title"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full  dark:bg-gray-500 dark:text-white"
             required
           />
         </div>
 
         <div>
-          <label className="label">
+          <label className="label dark:text-secondary">
             <span className="label-text font-medium">Category</span>
           </label>
           <select
             name="category"
-            className="select select-bordered w-full"
+            className="select select-bordered w-full dark:bg-gray-500 dark:text-white"
             required
           >
             <option disabled selected>
@@ -74,12 +74,12 @@ const AddTask = () => {
         </div>
 
         <div>
-          <label className="label">
+          <label className="label dark:text-secondary">
             <span className="label-text font-medium">Description</span>
           </label>
           <textarea
             name="description"
-            className="textarea textarea-bordered w-full"
+            className="textarea textarea-bordered w-full  dark:bg-gray-500 dark:text-white"
             rows="4"
             placeholder="Describe the task"
             required
@@ -87,19 +87,19 @@ const AddTask = () => {
         </div>
 
         <div>
-          <label className="label">
+          <label className="label dark:text-secondary">
             <span className="label-text font-medium">Deadline</span>
           </label>
           <input
             name="deadline"
             type="date"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full  dark:bg-gray-500 dark:text-white"
             required
           />
         </div>
 
         <div>
-          <label className="label">
+          <label className="label dark:text-secondary">
             <span className="label-text font-medium">Budget</span>
           </label>
           <input
@@ -107,33 +107,33 @@ const AddTask = () => {
             type="number"
             min="0"
             placeholder="Enter budget amount"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full  dark:bg-gray-500 dark:text-white"
             required
           />
         </div>
 
         <div>
-          <label className="label">
+          <label className="label dark:text-secondary">
             <span className="label-text font-medium">Your Email</span>
           </label>
           <input
             name="email"
             type="email"
             value={user.email}
-            className="input input-bordered w-full bg-gray-100"
+            className="input input-bordered w-full bg-gray-100  dark:bg-gray-500 dark:text-white"
             readOnly
           />
         </div>
 
         <div>
-          <label className="label">
+          <label className="label dark:text-secondary">
             <span className="label-text font-medium">Your Name</span>
           </label>
           <input
             name="name"
             type="text"
             value={user.displayName}
-            className="input input-bordered w-full bg-gray-100"
+            className="input input-bordered w-full bg-gray-100  dark:bg-gray-500 dark:text-white"
             readOnly
           />
         </div>

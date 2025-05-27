@@ -58,9 +58,9 @@ const MyTasks = () => {
     document.getElementById("my_modal_1").showModal();
   };
   return (
-    <div className="overflow-x-auto px-4 py-6">
+    <div className="overflow-x-auto px-4 py-6 dark:text-white">
       <dialog id="my_modal_1" className="modal">
-        <div className="modal-box">
+        <div className="modal-box dark:text-gray-600">
           <h3 className="font-bold text-lg">The bidders</h3>
           {theTask?.bids?.map((bid) => (
             <p className="py-4">{bid}</p>

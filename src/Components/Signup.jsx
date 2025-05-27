@@ -12,7 +12,7 @@ const Signup = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        navigate("/")
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -50,43 +50,51 @@ const Signup = () => {
   };
   return (
     <div className="hero mt-20">
-      <div className="card shadow-primary w-full max-w-sm shrink-0 shadow-2xl">
+      <div className="card shadow-primary w-full max-w-sm shrink-0 shadow-2xl dark:shadow-none ">
         <div className="card-body text-primary">
           <form onSubmit={handleSignUpBtn} className="fieldset">
-            <label className="label text-neutral-950">Name</label>
+            <label className="label text-neutral-950 dark:text-secondary">
+              Name
+            </label>
             <input
               name="name"
               type="text"
-              className="input"
+              className="input dark:bg-gray-500 dark:text-white"
               placeholder="John Doe"
               required
             />
-            <label className="label text-neutral-950">Email</label>
+            <label className="label text-neutral-950 dark:text-secondary">
+              Email
+            </label>
             <input
               name="email"
               type="email"
-              className="input"
+              className="input dark:bg-gray-500 dark:text-white"
               placeholder="johndoe@gmail.com"
               required
             />
-            <label className="label text-neutral-950">Password</label>
+            <label className="label text-neutral-950 dark:text-secondary">
+              Password
+            </label>
             <input
               name="pass"
               type="password"
-              className="input"
+              className="input dark:bg-gray-500 dark:text-white"
               placeholder="Password"
               required
             />
-            <label className="label text-neutral-950">Photo URL</label>
+            <label className="label text-neutral-950 dark:text-secondary">
+              Photo URL
+            </label>
             <input
               name="photo"
               type="text"
-              className="input"
+              className="input dark:bg-gray-500 dark:text-white"
               placeholder="Photo URL"
               required
             />
             <div>
-              <p className="text-md">
+              <p className="text-md dark:text-secondary">
                 Already have an account, click here to{" "}
                 <NavLink to={"/auth/login"} className="link link-hover">
                   Login
@@ -100,7 +108,7 @@ const Signup = () => {
             </div>
             <button
               type="submit"
-              className="btn btn-primary text-secondary mt-0"
+              className="btn btn-primary text-secondary mt-0 "
             >
               Signup
             </button>

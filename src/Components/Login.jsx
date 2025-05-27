@@ -38,25 +38,25 @@ const Login = () => {
   };
   return (
     <div className="hero mt-20">
-      <div className="card shadow-primary w-full max-w-sm shrink-0 shadow-2xl">
+      <div className="card shadow-primary w-full max-w-sm shrink-0 shadow-2xl dark:shadow-none dark:border-2 dark:border-white dark:text-secondary">
         <div className="card-body text-primary">
           <form onSubmit={handleLoginBtn} className="fieldset">
-            <label className="label text-neutral-950">Email</label>
+            <label className="label text-neutral-950  dark:text-secondary">Email</label>
             <input
               name="email"
               type="email"
-              className="input"
+              className="input dark:bg-gray-500 dark:text-white"
               placeholder="Email"
             />
-            <label className="label text-neutral-950">Password</label>
+            <label className="label text-neutral-950 dark:text-secondary">Password</label>
             <input
               name="pass"
               type="password"
-              className="input"
+              className="input dark:bg-gray-500 dark:text-white"
               placeholder="Password"
             />
             <div>
-              <p className="text-md">
+              <p className="text-md dark:text-secondary">
                 Don't have an account, click here to{" "}
                 <NavLink to={"/auth/signup"} className="link link-hover">
                   Signup
@@ -72,7 +72,7 @@ const Login = () => {
           </form>
           <button
             onClick={handleGoogleBtn}
-            className="btn bg-white text-black border-[#e5e5e5]"
+            className="btn bg-white text-black border-[#e5e5e5] "
           >
             <svg
               aria-label="Google logo"

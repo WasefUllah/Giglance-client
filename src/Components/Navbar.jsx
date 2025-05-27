@@ -89,12 +89,12 @@ const Navbar = () => {
           {!user ? (
             <div className="flex justify-center items-center gap-2">
               <NavLink to={"/auth/login"}>
-                <button className="lg:btn btn-xs text-xs md:text-me lg:text-lg btn-secondary text-primary">
+                <button className="lg:btn btn-xs btn-secondary text-xs sm:px-1 lg:text-lg   text-primary" >
                   Login
                 </button>
               </NavLink>
               <NavLink to={"/auth/signup"}>
-                <button className="lg:btn btn-xs btn-secondary text-primary">
+                <button className="lg:btn btn-xs btn-secondary text-xs sm:px-1 lg:text-lg   text-primary">
                   Signup
                 </button>
               </NavLink>

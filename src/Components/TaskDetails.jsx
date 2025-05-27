@@ -75,37 +75,37 @@ const TaskDetails = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4">
-      <div className="bg-white shadow-lg rounded-lg p-6 space-y-4">
+    <div className="max-w-4xl mx-auto p-4 ">
+      <div className="bg-white shadow-lg rounded-lg p-6 space-y-4 dark:bg-gray-500 ">
         <div className="mt-4">
           {isFromMyTasks ? (
             <form
               onSubmit={handleUpdateBtn}
-              className="max-w-2xl mx-auto p-6 bg-white shadow-lg shadow-primary my-5 rounded-lg space-y-4 text-base-accent"
+              className="max-w-3xl mx-auto p-6 bg-white shadow-lg shadow-primary  rounded-lg space-y-4 text-base-accent  dark:bg-gray-700"
             >
-              <h2 className="text-2xl font-bold text-center text-primary">
+              <h2 className="text-2xl font-bold text-center text-primary dark:text-secondary">
                 Update the task
               </h2>
 
               <div>
-                <label className="label">
+                <label className="label dark:text-white">
                   <span className="label-text font-medium">Task Title</span>
                 </label>
                 <input
                   name="title"
                   type="text"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full dark:bg-gray-400 dark:text-white "
                   defaultValue={task.title}
                 />
               </div>
 
               <div>
-                <label className="label">
+                <label className="label dark:text-white">
                   <span className="label-text font-medium">Category</span>
                 </label>
                 <select
                   name="category"
-                  className="select select-bordered w-full"
+                  className="select select-bordered w-full dark:bg-gray-400 dark:text-white "
                   defaultValue={task.category}
                 >
                   <option disabled selected>
@@ -119,12 +119,12 @@ const TaskDetails = () => {
               </div>
 
               <div>
-                <label className="label">
+                <label className="label dark:text-white">
                   <span className="label-text font-medium">Description</span>
                 </label>
                 <textarea
                   name="description"
-                  className="textarea textarea-bordered w-full"
+                  className="textarea textarea-bordered w-full dark:bg-gray-400 dark:text-white "
                   rows="4"
                   placeholder="Describe the task"
                   defaultValue={task.description}
@@ -132,19 +132,19 @@ const TaskDetails = () => {
               </div>
 
               <div>
-                <label className="label">
+                <label className="label dark:text-white">
                   <span className="label-text font-medium">Deadline</span>
                 </label>
                 <input
                   name="deadline"
                   type="date"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full dark:bg-gray-400 dark:text-white "
                   defaultValue={task.deadline}
                 />
               </div>
 
               <div>
-                <label className="label">
+                <label className="label dark:text-white">
                   <span className="label-text font-medium">Budget</span>
                 </label>
                 <input
@@ -152,33 +152,33 @@ const TaskDetails = () => {
                   type="number"
                   min="0"
                   placeholder="Enter budget amount"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full dark:bg-gray-400 dark:text-white "
                   defaultValue={task.budget}
                 />
               </div>
 
               <div>
-                <label className="label">
+                <label className="label dark:text-white">
                   <span className="label-text font-medium">Your Email</span>
                 </label>
                 <input
                   name="email"
                   type="email"
                   value={task.email}
-                  className="input input-bordered w-full bg-gray-100"
+                  className="input input-bordered w-full bg-gray-100 dark:bg-gray-400 dark:text-white "
                   readOnly
                 />
               </div>
 
               <div>
-                <label className="label">
+                <label className="label dark:text-white">
                   <span className="label-text font-medium">Your Name</span>
                 </label>
                 <input
                   name="name"
                   type="text"
                   value={task.name}
-                  className="input input-bordered w-full bg-gray-100"
+                  className="input input-bordered w-full bg-gray-100 dark:bg-gray-400 dark:text-white "
                   readOnly
                 />
               </div>
@@ -191,12 +191,16 @@ const TaskDetails = () => {
             </form>
           ) : (
             <>
-              <p className="text-right">
-                You bid for {bidCount} opportunities.
+              <p className="text-right dark:text-secondary">
+                This task has {bidCount} bids.
               </p>
-              <h2 className="text-2xl font-bold">{task.title}</h2>
-              <p className="text-gray-700">{task.description}</p>
-              <div className="flex flex-wrap justify-between gap-4 text-sm text-gray-600">
+              <h2 className="text-2xl font-bold dark:text-secondary">
+                {task.title}
+              </h2>
+              <p className="text-gray-700 dark:text-white">
+                {task.description}
+              </p>
+              <div className="flex flex-wrap justify-between gap-4 text-sm text-gray-600 dark:text-white">
                 <p>
                   <strong>Deadline:</strong> {task.deadline}
                 </p>
@@ -210,7 +214,7 @@ const TaskDetails = () => {
 
               <button
                 onClick={handleBid}
-                className="btn btn-success btn-sm flex items-center"
+                className="btn  btn-sm flex items-center dark:bg-secondary"
               >
                 <FaGavel className="mr-2" /> Place a Bid
               </button>

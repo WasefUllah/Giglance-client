@@ -12,6 +12,7 @@ const Navbar = () => {
         console.log(error);
       });
   };
+console.log(user?.photoURL);
 
   return (
     <div className=" bg-primary">
@@ -73,7 +74,7 @@ const Navbar = () => {
               >
                 <img
                   src={user?.photoURL}
-                  alt=""
+                  alt="user photo"
                   className="md:w-16 w-13 rounded-full"
                 />
               </a>

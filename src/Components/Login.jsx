@@ -4,7 +4,6 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
   const location = useLocation();
-  console.log(location.state);
 
   const navigate = useNavigate();
   const { signInWithGoogle, setUser, signInWithEmailPass } =
@@ -12,8 +11,8 @@ const Login = () => {
   const handleGoogleBtn = () => {
     signInWithGoogle()
       .then((result) => {
-        const user = result.user;
-        setUser(user);
+        // const user = result.user;
+        // setUser(user);
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {

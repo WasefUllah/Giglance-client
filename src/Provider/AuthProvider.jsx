@@ -18,14 +18,17 @@ const AuthProvider = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
   // Google sign in
   const signInWithGoogle = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
   // Email sign in
   const signInWithEmailPass = (email, pass) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, pass);
   };
   // Email sign up
   const signUpWithEmailPass = (email, pass) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, pass);
   };
   // sign out

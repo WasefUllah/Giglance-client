@@ -8,6 +8,7 @@ const MyTasks = () => {
   const [tasks, setTasks] = useState([]);
   const loadedTasks = useLoaderData();
   const location = useLocation();
+  const [theTask, setTheTask] = useState({});
 
   const myTasks = loadedTasks.filter((task) => task.email === user.email);
   useEffect(() => {
@@ -51,8 +52,28 @@ const MyTasks = () => {
       }
     });
   };
+  const handleMyBids = (id) => {
+    setTheTask(myTasks.find((task) => task._id === id));
+    console.log(theTask?.bids?.length);
+    document.getElementById("my_modal_1").showModal();
+  };
   return (
     <div className="overflow-x-auto px-4 py-6">
+      <dialog id="my_modal_1" className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">The bidders</h3>
+          {theTask?.bids?.map((bid) => (
+            <p className="py-4">{bid}</p>
+          ))}
+          <div className="modal-action">
+            <form method="dialog">
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
       <h2 className="text-2xl font-bold mb-4 text-center">My tasks</h2>
       <table className="table table-zebra w-full text-sm lg:text-base">
         <thead className="bg-primary text-white">
@@ -93,6 +114,12 @@ const MyTasks = () => {
                   onClick={() => handleDelete(task._id, task.title)}
                 >
                   Delete
+                </button>
+                <button
+                  onClick={() => handleMyBids(task._id)}
+                  className="btn btn-sm btn-info"
+                >
+                  Bids
                 </button>
               </td>
             </tr>

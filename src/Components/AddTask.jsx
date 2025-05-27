@@ -8,10 +8,10 @@ const AddTask = () => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    const taskData = Object.fromEntries(formData.entries());    
-
+    const taskData = Object.fromEntries(formData.entries());
+    taskData.bids = [];
     // send data to server
-    
+
     fetch("http://localhost:3000/tasks", {
       method: "POST",
       headers: {

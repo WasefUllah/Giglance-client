@@ -14,7 +14,7 @@ A modern full-stack freelancing platform built with React, Tailwind CSS, and Fir
 
 ## Server side repo
 
-`https://github.com/WasefUllah/Giglance-server`
+https://github.com/WasefUllah/Giglance-server
 
 ---
 

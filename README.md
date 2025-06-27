@@ -12,28 +12,34 @@ A modern full-stack freelancing platform built with React, Tailwind CSS, and Fir
 
 ---
 
+## Server side repo
+
+`https://github.com/WasefUllah/Giglance-server`
+
+---
+
 ## 🚀 Features
 
-- 🔐 User Authentication (React Context + Firebase)  
-- 📝 Post a Task with details like title, category, budget, deadline  
-- 🔍 Browse Tasks and place Bids on them  
-- 🗃️ Filter and Sort Tasks by deadline  
-- 🧠 Tooltip UI and CountUp animation for better UX  
-- 🌗 Dark/Light Theme toggle powered by DaisyUI  
-- ✅ Detailed Task Page with conditional UI based on user role  
-- 🔧 Task Update feature for task owners  
-- 📦 REST API integration (localhost:3000/tasks assumed for development)  
+- 🔐 User Authentication (React Context + Firebase)
+- 📝 Post a Task with details like title, category, budget, deadline
+- 🔍 Browse Tasks and place Bids on them
+- 🗃️ Filter and Sort Tasks by deadline
+- 🧠 Tooltip UI and CountUp animation for better UX
+- 🌗 Dark/Light Theme toggle powered by DaisyUI
+- ✅ Detailed Task Page with conditional UI based on user role
+- 🔧 Task Update feature for task owners
+- 📦 REST API integration (localhost:3000/tasks assumed for development)
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React, Tailwind CSS, DaisyUI  
-- **State Management:** React Context API  
-- **Routing:** React Router DOM  
-- **Backend:** Custom API (Node.js/Express assumed)  
-- **Authentication:** Firebase Authentication  
-- **Deployment:** Firebase Hosting  
+- **Frontend:** React, Tailwind CSS, DaisyUI
+- **State Management:** React Context API
+- **Routing:** React Router DOM
+- **Backend:** Custom API (Node.js/Express assumed)
+- **Authentication:** Firebase Authentication
+- **Deployment:** Firebase Hosting
 
 ---
 
@@ -52,62 +58,67 @@ A modern full-stack freelancing platform built with React, Tailwind CSS, and Fir
   "sweetalert2": "^11.21.2",
   "tailwindcss": "^4.1.7"
 }
-
 ```
+
 ---
+
 ## 📁 Folder Structure & Running Locally
 
 ### 📂 Folder Structure
+
 /src  
 ├── Components/  
-│   ├── AddTask.jsx  
-│   ├── BrowseTask.jsx  
-│   ├── Error.jsx  
-│   ├── Faq.jsx  
-│   ├── Footer.jsx  
-│   ├── Home.jsx  
-│   ├── Loader.jsx  
-│   ├── Login.jsx  
-│   ├── MyTasks.jsx  
-│   ├── Navbar.jsx  
-│   ├── Signup.jsx  
-│   ├── Success.jsx  
-│   ├── TaskCard.jsx  
-│   ├── TaskDetails.jsx  
-│   └── UpdateTask.jsx  
+│ ├── AddTask.jsx  
+│ ├── BrowseTask.jsx  
+│ ├── Error.jsx  
+│ ├── Faq.jsx  
+│ ├── Footer.jsx  
+│ ├── Home.jsx  
+│ ├── Loader.jsx  
+│ ├── Login.jsx  
+│ ├── MyTasks.jsx  
+│ ├── Navbar.jsx  
+│ ├── Signup.jsx  
+│ ├── Success.jsx  
+│ ├── TaskCard.jsx  
+│ ├── TaskDetails.jsx  
+│ └── UpdateTask.jsx  
 ├── Firebase/  
-│   └── (Firebase config files)  
+│ └── (Firebase config files)  
 ├── Layouts/  
-│   └── (Main layout files)  
+│ └── (Main layout files)  
 ├── PrivateRoute/  
-│   └── PrivateRoute.jsx  
+│ └── PrivateRoute.jsx  
 ├── Provider/  
-│   └── AuthProvider.jsx  
+│ └── AuthProvider.jsx  
 ├── Routes/  
-│   └── (All route setup files)  
+│ └── (All route setup files)  
 ├── App.jsx  
-└── main.jsx  
+└── main.jsx
 
 ---
 
 ### 🧪 Running Locally
 
-
 # Clone the repository
+
 git clone https://github.com/WasefUllah/Giglance-client.git
 
 # Navigate to the project directory
+
 cd Giglance-client
 
 # Install dependencies
+
 npm install
 
 # Configure Firebase
+
 # Replace the config object in /src/Firebase/ with your own Firebase project credentials.
 
 # Start the development server
-npm run dev
 
+npm run dev
 
 Open your browser:
 

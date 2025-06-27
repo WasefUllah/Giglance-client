@@ -37,7 +37,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" bg-primary dark:bg-gray-800">
+    <div className=" bg-primary dark:bg-gray-800 sticky top-0 z-10 py-1 ">
       <Tooltip id="my-tooltip" />
       <div className="flex justify-between items-center gap-1 md:w-11/12 mx-auto py-5">
         <div>

@@ -58,7 +58,7 @@ const MyTasks = () => {
     document.getElementById("my_modal_1").showModal();
   };
   return (
-    <div className="overflow-x-auto px-4 py-6 dark:text-white">
+    <div className="overflow-x-auto px-4 py-6 dark:text-white min-h-[600px]">
       <dialog id="my_modal_1" className="modal">
         <div className="modal-box dark:text-white">
           <h3 className="font-bold text-lg">The bidders</h3>

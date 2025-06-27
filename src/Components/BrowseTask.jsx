@@ -11,7 +11,7 @@ const BrowseTask = () => {
   }, []);
 
   return (
-    <div className="overflow-x-auto px-4 py-6 dark:text-white ">
+    <div className="overflow-x-auto px-4 py-6 dark:text-white min-h-[600px]">
       <h2 className="text-2xl font-bold mb-4 text-center">All Tasks</h2>
       <table className="table table-zebra w-full text-sm lg:text-base">
         <thead className="bg-primary text-white">

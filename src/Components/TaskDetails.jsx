@@ -75,8 +75,8 @@ const TaskDetails = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 ">
-      <div className="bg-white shadow-lg rounded-lg p-6 space-y-4 dark:bg-gray-500 ">
+    <div className="max-w-4xl mx-auto p-4 min-h-[600px] flex justify-center items-center">
+      <div className="bg-white shadow-lg rounded-lg p-10 lg:p-16 space-y-4 dark:bg-gray-500 ">
         <div className="mt-4">
           {isFromMyTasks ? (
             <form
@@ -197,10 +197,10 @@ const TaskDetails = () => {
               <h2 className="text-2xl font-bold dark:text-white">
                 {task.title}
               </h2>
-              <p className="text-gray-700 dark:text-white">
+              <p className="text-gray-700 dark:text-white mb-2">
                 {task.description}
               </p>
-              <div className="flex flex-wrap justify-between gap-4 text-sm text-gray-600 dark:text-white">
+              <div className="flex flex-wrap justify-between space-y-2 gap-4 text-sm text-gray-600 dark:text-white">
                 <p>
                   <strong>Deadline:</strong> {task.deadline}
                 </p>

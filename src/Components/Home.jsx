@@ -20,10 +20,10 @@ const Home = () => {
 
   return (
     <div className="">
-      <div className="carousel w-full h-[450px]">
+      <div className="carousel w-full h-[450px] mt-10">
         <div id="slide1" className="carousel-item relative w-full">
           <div className="w-full flex justify-center items-center">
-            <div className="bg-blue-600 text-white rounded-2xl p-10 w-11/12 md:w-3/4 shadow-lg text-center">
+            <div className="bg-blue-600 text-white rounded-2xl p-10 w-11/12 h-full flex justify-center items-center flex-col  md:w-3/4 shadow-lg text-center">
               <h2 className="text-3xl font-bold mb-4">Web Development</h2>
               <p className="text-lg">
                 Create powerful, modern, and responsive websites or web
@@ -43,7 +43,7 @@ const Home = () => {
         {/* Slide 2 - Marketing */}
         <div id="slide2" className="carousel-item relative w-full">
           <div className="w-full flex justify-center items-center">
-            <div className="bg-green-600 text-white rounded-2xl p-10 w-11/12 md:w-3/4 shadow-lg text-center">
+            <div className="bg-green-600 text-white rounded-2xl p-10 w-11/12 h-full flex justify-center items-center flex-col  md:w-3/4 shadow-lg text-center">
               <h2 className="text-3xl font-bold mb-4">Marketing</h2>
               <p className="text-lg">
                 Boost your brand and reach your audience through strategic
@@ -63,7 +63,7 @@ const Home = () => {
         {/* Slide 3 - Content Writing */}
         <div id="slide3" className="carousel-item relative w-full">
           <div className="w-full flex justify-center items-center">
-            <div className="bg-yellow-500 text-white rounded-2xl p-10 w-11/12 md:w-3/4 shadow-lg text-center">
+            <div className="bg-yellow-500 text-white rounded-2xl p-10 w-11/12 h-full flex justify-center items-center flex-col  md:w-3/4 shadow-lg text-center">
               <h2 className="text-3xl font-bold mb-4">Content Writing</h2>
               <p className="text-lg">
                 Deliver professional and compelling written content for blogs,
@@ -83,7 +83,7 @@ const Home = () => {
         {/* Slide 4 - Design */}
         <div id="slide4" className="carousel-item relative w-full">
           <div className="w-full flex justify-center items-center">
-            <div className="bg-pink-600 text-white rounded-2xl p-10 w-11/12 md:w-3/4 shadow-lg text-center">
+            <div className="bg-pink-600 text-white rounded-2xl p-10 w-11/12 h-full flex justify-center items-center flex-col  md:w-3/4 shadow-lg text-center">
               <h2 className="text-3xl font-bold mb-4">Graphic Design</h2>
               <p className="text-lg">
                 Create stunning visual content, logos, and designs that help

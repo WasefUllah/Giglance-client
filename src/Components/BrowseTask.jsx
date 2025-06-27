@@ -13,7 +13,7 @@ const BrowseTask = () => {
       setTasks(loadedTasks);
     } else {
       // Fetch filtered tasks from the server
-      fetch(`http://localhost:3000/tasks?category=${selectedCategory}`)
+      fetch(`https://giglance-server.vercel.app/tasks?category=${selectedCategory}`)
         .then((res) => res.json())
         .then((data) => setTasks(data));
     }

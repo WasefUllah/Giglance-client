@@ -56,21 +56,18 @@ const Navbar = () => {
                 Home
               </li>
             </NavLink>
-            <NavLink to={"/addtask"}>
+            <NavLink to={"/dashboard"}>
               <li className="lg:px-2 px-1  lg:py-1 rounded-2xl text-xs lg:text-lg">
-                Add task
+                Dashboard
               </li>
             </NavLink>
+            
             <NavLink to={"/tasks"}>
               <li className="lg:px-2 px-1  lg:py-1 rounded-2xl text-xs lg:text-lg">
-                Browse task
+                All task
               </li>
             </NavLink>
-            <NavLink to={"/mytask"}>
-              <li className="lg:px-2 px-1  lg:py-1 rounded-2xl text-xs lg:text-lg">
-                My task
-              </li>
-            </NavLink>
+            
           </ul>
         </div>
         <div className="flex justify-center  items-center gap-2">

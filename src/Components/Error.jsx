@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router";
-import img from '../assets/errorimg.png'
+import img from "../assets/errorimg.png";
 const Error = () => {
   return (
     <div className="w-11/12 mx-auto flex flex-col justify-center items-center gap-6">
@@ -9,7 +9,6 @@ const Error = () => {
       <p>Opss!! the page you are looking for doesn't exists</p>
 
       <NavLink to={"/"}>
-        {" "}
         <button className="btn btn-primary bg-primary text-secondary border-none">
           Go back to Home
         </button>

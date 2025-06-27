@@ -13,11 +13,11 @@ import Loader from "../Components/Loader";
 import TaskDetails from "../Components/TaskDetails";
 import UpdateTask from "../Components/UpdateTask";
 import DashBoardLayout from "../Layouts/DashBoardLayout";
-import BrowseTaskFromFormat from "../Components/BrowseTaskFromFormat";
 import Dashboard from "../Components/Dashboard";
 import AboutUs from "../Components/AboutUs";
 import Contact from "../Components/Contact";
 import TermsAndConditions from "../Components/TermsAndConditions";
+import BrowseTaskTableFormat from "../Components/BrowseTaskTableFormat";
 
 export const router = createBrowserRouter([
   {
@@ -106,8 +106,7 @@ export const router = createBrowserRouter([
         hydrateFallbackElement: <Loader></Loader>,
         element: (
           <PrivateRoute>
-            {/* <BrowseTask></BrowseTask> */}
-            <BrowseTaskFromFormat></BrowseTaskFromFormat>
+            <BrowseTaskTableFormat></BrowseTaskTableFormat>
           </PrivateRoute>
         ),
       },

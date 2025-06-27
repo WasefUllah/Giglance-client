@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router";
 import TaskCard from "./TaskCard";
 import Success from "./Success";
 import Faq from "./Faq";
+import Blog from "./Blog";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -102,25 +103,31 @@ const Home = () => {
         </div>
       </div>
 
-        <h1 className="font-bold text-2xl py-2 text-primary dark:text-white">Deadline Calls</h1>
+      <h1 className="font-bold text-2xl py-2 text-primary dark:text-white text-center my-4">
+        Deadline Calls
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-2 lg:gap-4">
         {tasks?.map((task) => (
           <TaskCard key={task._id} task={task}></TaskCard>
         ))}
       </div>
 
-      
-
-      
-       <div>
-        <h1 className="font-bold text-2xl pt-3 text-primary dark:text-white">Our Services</h1>
-         <Success data={data}></Success>
-       </div>
-     
+      <div>
+        <h1 className="font-bold text-2xl pt-3 text-primary dark:text-white text-center my-4">
+          Our Services
+        </h1>
+        <Success data={data}></Success>
+      </div>
 
       <div className="my-5">
-        <h1 className="font-bold text-2xl pt-3 text-primary dark:text-white">FAQs</h1>
+        <h1 className="font-bold text-2xl pt-3 text-primary dark:text-white text-center  my-4">
+          FAQs
+        </h1>
         <Faq faq={faq}></Faq>
+      </div>
+
+      <div>
+        <Blog></Blog>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router";
 
-const BrowseTaskFromFormat = () => {
+const BrowseTaskTableFormat = () => {
   const loadedTasks = useLoaderData();
   const [tasks, setTasks] = useState(loadedTasks);
 
@@ -52,4 +52,4 @@ const BrowseTaskFromFormat = () => {
   );
 };
 
-export default BrowseTaskFromFormat;
+export default BrowseTaskTableFormat;

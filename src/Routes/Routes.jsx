@@ -14,6 +14,9 @@ import TaskDetails from "../Components/TaskDetails";
 import UpdateTask from "../Components/UpdateTask";
 import DashBoardLayout from "../Layouts/DashBoardLayout";
 import BrowseTaskFromFormat from "../Components/BrowseTaskFromFormat";
+import Dashboard from "../Components/Dashboard";
+import AboutUs from "../Components/AboutUs";
+import Contact from "../Components/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -30,11 +33,7 @@ export const router = createBrowserRouter([
         path: "/tasks",
         loader: () => fetch("https://giglance-server.vercel.app/tasks"),
         hydrateFallbackElement: <Loader></Loader>,
-        element: (
-          <PrivateRoute>
-            <BrowseTask></BrowseTask>
-          </PrivateRoute>
-        ),
+        element: <BrowseTask></BrowseTask>,
       },
       {
         path: "/tasks/:id",
@@ -47,6 +46,14 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "/aboutUs",
+        Component: AboutUs,
+      },
+      {
+        path: "/contactUs",
+        Component: Contact,
+      },
     ],
   },
   {
@@ -55,11 +62,9 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: (
-          <div className="flex items-center justify-center text-primary font-bold text-2xl md:text-5xl lg:text-7xl  min-h-[500px]">
-            Welcome to dashboard
-          </div>
-        ),
+        Component: Dashboard,
+        loader: () => fetch("https://giglance-server.vercel.app/tasks"),
+        hydrateFallbackElement: <Loader></Loader>,
       },
       {
         path: "/dashboard/mytask",

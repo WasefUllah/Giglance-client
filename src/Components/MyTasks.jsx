@@ -5,11 +5,11 @@ import Swal from "sweetalert2";
 
 const MyTasks = () => {
   const { user } = useContext(AuthContext);
-  const [tasks, setTasks] = useState([]);
-  const loadedTasks = useLoaderData();
   const location = useLocation();
   const [theTask, setTheTask] = useState({});
-
+  
+  const [tasks, setTasks] = useState([]);
+  const loadedTasks = useLoaderData();
   const myTasks = loadedTasks.filter((task) => task.email === user.email);
   useEffect(() => {
     setTasks(myTasks);

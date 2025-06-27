@@ -56,18 +56,29 @@ const Navbar = () => {
                 Home
               </li>
             </NavLink>
-            <NavLink to={"/dashboard"}>
-              <li className="lg:px-2 px-1  lg:py-1 rounded-2xl text-xs lg:text-lg">
-                Dashboard
-              </li>
-            </NavLink>
-            
+            {user && (
+              <NavLink to={"/dashboard"}>
+                <li className="lg:px-2 px-1  lg:py-1 rounded-2xl text-xs lg:text-lg">
+                  Dashboard
+                </li>
+              </NavLink>
+            )}
+
             <NavLink to={"/tasks"}>
               <li className="lg:px-2 px-1  lg:py-1 rounded-2xl text-xs lg:text-lg">
                 All task
               </li>
             </NavLink>
-            
+            <NavLink to={"/aboutUs"}>
+              <li className="lg:px-2 px-1  lg:py-1 rounded-2xl text-xs lg:text-lg">
+                About Us
+              </li>
+            </NavLink>
+            <NavLink to={"/contactUs"}>
+              <li className="lg:px-2 px-1  lg:py-1 rounded-2xl text-xs lg:text-lg">
+                Contact Us
+              </li>
+            </NavLink>
           </ul>
         </div>
         <div className="flex justify-center  items-center gap-2">

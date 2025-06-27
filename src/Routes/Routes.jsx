@@ -17,6 +17,7 @@ import BrowseTaskFromFormat from "../Components/BrowseTaskFromFormat";
 import Dashboard from "../Components/Dashboard";
 import AboutUs from "../Components/AboutUs";
 import Contact from "../Components/Contact";
+import TermsAndConditions from "../Components/TermsAndConditions";
 
 export const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ export const router = createBrowserRouter([
         path: "/contactUs",
         Component: Contact,
       },
+      {
+        path: "/terms",
+        Component: TermsAndConditions
+      }
     ],
   },
   {
